@@ -4,6 +4,7 @@ import (
 	"fmt"
   "github.com/gomodule/redigo/redis"
 	"encoding/json"
+	"os"
 )
 
 var (
@@ -11,6 +12,7 @@ var (
 	err error
 	reply interface{}
 )
+var redis_store string "redis:6379"
 
 type MPipe struct {
 	Name string
@@ -20,8 +22,10 @@ type MPipe struct {
 	ChannelOut []string
 }
 
-
-func store(mp *MPipe) {
+func Init(redissrv string) {
+	redis_store=redissrv
+}
+func Store(mp *MPipe) {
 	b , err := json.Marshal(mp)
 	if err != nil {
 		fmt.Println(err)
@@ -32,7 +36,7 @@ func store(mp *MPipe) {
 
   // Handle pooling using several redis clients... //
 
-	c, err = redis.Dial("tcp", "redis:6379")
+	c, err = redis.Dial("tcp", redis_store)
 	if err != nil {
 		fmt.Print(err)
 	}
@@ -44,7 +48,7 @@ func store(mp *MPipe) {
 
 }
 
-func show(mp *MPipe) {
+func Show(mp *MPipe) {
 	fmt.Printf("\nMPipeInfo:\n")
 	fmt.Print("--------------------------------------------------------\n")
 	fmt.Printf("Name:       			%s\n",mp.Name);
@@ -62,10 +66,10 @@ func show(mp *MPipe) {
 	}
 	fmt.Print("--------------------------------------------------------\n")
 }
-func retrieve(pipename string) MPipe {
+func Retrieve(pipename string) MPipe {
   // Handle pooling using several redis clients... //
 
-	c, err = redis.Dial("tcp", "redis:6379")
+	c, err = redis.Dial("tcp",redis_store) 
 	if err != nil {
 		fmt.Print(err)
 	}
