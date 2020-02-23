@@ -98,7 +98,7 @@ func AvailablePipes() []string {
 
 	var out []string
 
-	for i, key :=  range keys {
+	for _, key :=  range keys {
 		modified_key := strings.Replace(key,"mpipe.","",-1)
 		out = append(out,modified_key)
 	}
