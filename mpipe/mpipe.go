@@ -45,7 +45,7 @@ func Store(mp *MPipe) {
 		fmt.Print(err)
 	}
 
-	_, err = c.Do("JSON.SET","mpipe.first",".",string(b))
+	_, err = c.Do("JSON.SET","mpipe."+mp.Name,".",string(b))
 	if err != nil {
 		fmt.Print(err)
 	}
