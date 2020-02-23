@@ -12,7 +12,7 @@ var (
 	err error
 	reply interface{}
 )
-var redis_store string "redis:6379"
+var redis_store string = "redis:6379"
 
 type MPipe struct {
 	Name string
