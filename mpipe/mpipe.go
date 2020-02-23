@@ -128,9 +128,9 @@ func DumpJSONConfig()  string {
 					b , err := json.MarshalIndent(cfg,"", "  ")
 					if err != nil {
 						fmt.Println(err)
-							return
+					} else {
+						fmt.Printf("%s",string(b))
 					}
-					fmt.Printf("%s",string(b))
 	}
 	return "gotabe json"
 
