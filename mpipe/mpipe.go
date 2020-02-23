@@ -89,7 +89,7 @@ func AvailablePipes()  {
 		fmt.Print(err)
 	}
 
-	keys, err := redis.String(c.Do("KEYS","mpipe.*"))
+	keys, err := redis.Strings(c.Do("KEYS","mpipe.*"))
 	if err != nil {
 		fmt.Print(err)
 	}
