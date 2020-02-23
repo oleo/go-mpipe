@@ -16,6 +16,7 @@ var (
 
 type MPipe struct {
 	Name string
+	Description string
   Connector string
   Plugin string
 	ChannelIn []string
