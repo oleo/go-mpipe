@@ -22,6 +22,12 @@ type MPipe struct {
 	ChannelOut []string
 }
 
+type MPipeConfig struct {
+	Site string
+  ID string
+  MPipes []MPipe
+}
+
 func Init(redissrv string) {
 	redis_store=redissrv
 }
@@ -83,8 +89,8 @@ func Retrieve(pipename string) MPipe {
 	return structdata
 
 }
+func 
 func AvailablePipes() []string {
-
 
 	c, err = redis.Dial("tcp",redis_store) 
 	if err != nil {
