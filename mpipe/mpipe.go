@@ -117,5 +117,21 @@ func AvailablePipes() []string {
 }
 
 func DumpJSONConfig()  string {
+	cfg := MPipeConfig
+	cfg.Site="MySite"
+	cfg.ID="Prod-1"
+
+	for i,pipename := range mpipe.AvailablePipes() {
+			mp :=  mpipe.Retrieve(pipename)
+			cfg.MPipes = append(cfg.MPipes, mp)
+				// List registered available pipes
+					b , err := json.MarshalIndent(cfg,"", "  ")
+					if err != nil {
+						fmt.Println(err)
+							return
+					}
+					fmt.Printf("%s",string(b))
+
 	return "gotabe json"
+	
 }
