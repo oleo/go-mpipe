@@ -117,7 +117,7 @@ func AvailablePipes() []string {
 }
 
 func DumpJSONConfig()  string {
-	cfg := MPipeConfig
+	cfg := MPipeConfig{}
 	cfg.Site="MySite"
 	cfg.ID="Prod-1"
 
