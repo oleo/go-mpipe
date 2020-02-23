@@ -11,8 +11,12 @@ var (
 	c redis.Conn
 	err error
 	reply interface{}
+	redis_store string
+
 )
-var redis_store string = "redis:6379"
+var (
+	redis_store = "redis:6379"
+)
 
 type MPipe struct {
 	Name string
