@@ -121,7 +121,7 @@ func DumpJSONConfig()  string {
 	cfg.Site="MySite"
 	cfg.ID="Prod-1"
 
-	for i,pipename := range AvailablePipes() {
+	for _,pipename := range AvailablePipes() {
 			mp :=  Retrieve(pipename)
 			cfg.MPipes = append(cfg.MPipes, mp)
 				// List registered available pipes
