@@ -89,12 +89,15 @@ func AvailablePipes() []string {
 		fmt.Print(err)
 	}
 
-	keys , err := redis.String(c.Do("KEYS","mpipe.*"))
+	keys, err := redis.String(c.Do("KEYS","mpipe.*"))
 	if err != nil {
 		fmt.Print(err)
 	}
 
-	/*for _, key :=  range keys {
+	for _, key :=  range keys {
+		fmt.Printf("got %s\n",key)
+	}
+/*
 	structdata :=  MPipe{}
   _ = json.Unmarshal([]byte(jsondata),&structdata)
 
