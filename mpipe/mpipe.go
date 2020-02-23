@@ -89,7 +89,7 @@ func Retrieve(pipename string) MPipe {
 	return structdata
 
 }
-func 
+
 func AvailablePipes() []string {
 
 	c, err = redis.Dial("tcp",redis_store) 
@@ -116,3 +116,6 @@ func AvailablePipes() []string {
   return out
 }
 
+func DumpJSONConfig()  string {
+	return "gotabe json"
+}
