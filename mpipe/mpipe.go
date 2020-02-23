@@ -1,6 +1,7 @@
 package mpipe
 
 import (
+  "strings"
 	"fmt"
   "github.com/gomodule/redigo/redis"
 	"encoding/json"
