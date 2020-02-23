@@ -94,15 +94,10 @@ func AvailablePipes() []string {
 		fmt.Print(err)
 	}
 
+	/*
 	for _, key :=  range keys {
 		fmt.Printf("got %s\n",key)
 	}
-/*
-	structdata :=  MPipe{}
-  _ = json.Unmarshal([]byte(jsondata),&structdata)
-
-//	fmt.Printf(" Read %s struct\n",structdata.Name)
-	return structdata
 	*/
   return keys
 }
