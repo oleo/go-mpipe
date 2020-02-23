@@ -82,4 +82,25 @@ func Retrieve(pipename string) MPipe {
 	return structdata
 
 }
+func AvailablePipes() []string {
+
+	c, err = redis.Dial("tcp",redis_store) 
+	if err != nil {
+		fmt.Print(err)
+	}
+
+	keys , err := redis.String(c.Do("KEYS","mpipe.*"))
+	if err != nil {
+		fmt.Print(err)
+	}
+
+	/*for _, key :=  range keys {
+	structdata :=  MPipe{}
+  _ = json.Unmarshal([]byte(jsondata),&structdata)
+
+//	fmt.Printf(" Read %s struct\n",structdata.Name)
+	return structdata
+	*/
+  return keys
+}
 
