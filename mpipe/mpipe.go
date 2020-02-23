@@ -84,6 +84,8 @@ func Retrieve(pipename string) MPipe {
 }
 func AvailablePipes() []string {
 
+	var out []string
+
 	c, err = redis.Dial("tcp",redis_store) 
 	if err != nil {
 		fmt.Print(err)
@@ -94,11 +96,15 @@ func AvailablePipes() []string {
 		fmt.Print(err)
 	}
 
+	for i, key :=  range keys {
+		modified_key := strings.Replace(key,"mpipe.","",-1)
+		out[i] = modified_key
+	}
 	/*
 	for _, key :=  range keys {
 		fmt.Printf("got %s\n",key)
 	}
 	*/
-  return keys
+  return out
 }
 
