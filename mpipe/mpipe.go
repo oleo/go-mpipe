@@ -31,10 +31,6 @@ func Store(mp *MPipe) {
 		fmt.Println(err)
 		return
 	}
-	fmt.Println("Will store:")
-	fmt.Println(string(b))
-
-  // Handle pooling using several redis clients... //
 
 	c, err = redis.Dial("tcp", redis_store)
 	if err != nil {
@@ -82,7 +78,7 @@ func Retrieve(pipename string) MPipe {
 	structdata :=  MPipe{}
   _ = json.Unmarshal([]byte(jsondata),&structdata)
 
-	fmt.Printf(" Read %s struct\n",structdata.Name)
+//	fmt.Printf(" Read %s struct\n",structdata.Name)
 	return structdata
 
 }
