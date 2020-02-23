@@ -128,7 +128,7 @@ func DumpJSONConfig()  string {
 				// List registered available pipes
 					b , err := json.MarshalIndent(cfg,"", "  ")
 					if err != nil {
-						return string(err)
+						return Sprintf("%v",err);
 					} else {
 						//fmt.Printf("%s",string(b))
 						return string(b)
