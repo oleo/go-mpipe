@@ -1,4 +1,4 @@
-package "mpipe"
+package "go-mpipe"
 
 import (
 	"fmt"
