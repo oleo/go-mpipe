@@ -21,7 +21,7 @@ func main() {
 
   // Handle pooling using several redis clients... //
 
-	c, err = redis.Dial("tcp", "192.168.0.244:6379")
+	c, err = redis.Dial("tcp", "redis:6379")
 	if err != nil {
 		fmt.Print(err)
 	}
