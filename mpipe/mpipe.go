@@ -121,8 +121,8 @@ func DumpJSONConfig()  string {
 	cfg.Site="MySite"
 	cfg.ID="Prod-1"
 
-	for i,pipename := range mpipe.AvailablePipes() {
-			mp :=  mpipe.Retrieve(pipename)
+	for i,pipename := range AvailablePipes() {
+			mp :=  Retrieve(pipename)
 			cfg.MPipes = append(cfg.MPipes, mp)
 				// List registered available pipes
 					b , err := json.MarshalIndent(cfg,"", "  ")
