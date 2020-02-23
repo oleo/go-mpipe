@@ -4,17 +4,12 @@ import (
 	"fmt"
   "github.com/gomodule/redigo/redis"
 	"encoding/json"
-	"os"
 )
 
 var (
 	c redis.Conn
 	err error
 	reply interface{}
-	redis_store string
-
-)
-var (
 	redis_store = "redis:6379"
 )
 
@@ -29,6 +24,7 @@ type MPipe struct {
 func Init(redissrv string) {
 	redis_store=redissrv
 }
+
 func Store(mp *MPipe) {
 	b , err := json.Marshal(mp)
 	if err != nil {
