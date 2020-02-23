@@ -124,14 +124,14 @@ func DumpJSONConfig()  string {
 	for _,pipename := range AvailablePipes() {
 			mp :=  Retrieve(pipename)
 			cfg.MPipes = append(cfg.MPipes, mp)
+	}
 				// List registered available pipes
 					b , err := json.MarshalIndent(cfg,"", "  ")
 					if err != nil {
-						fmt.Println(err)
+						return string(err)
 					} else {
-						fmt.Printf("%s",string(b))
+						//fmt.Printf("%s",string(b))
+						return string(b)
 					}
-	}
-	return "gotabe json"
 
 }
