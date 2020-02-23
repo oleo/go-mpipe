@@ -33,6 +33,20 @@ func Init(redissrv string) {
 	redis_store=redissrv
 }
 
+func Delete(mp *MPipe) {
+
+	c, err = redis.Dial("tcp", redis_store)
+	if err != nil {
+		fmt.Print(err)
+	}
+
+	_, err = c.Do("JSON.DEL","mpipe."+mp.Name)
+	if err != nil {
+		fmt.Print(err)
+	}
+
+}
+
 func Store(mp *MPipe) {
 	b , err := json.Marshal(mp)
 	if err != nil {
