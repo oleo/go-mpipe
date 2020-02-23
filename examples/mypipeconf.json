@@ -1,0 +1,48 @@
+{
+  "Site": "MySite",
+  "ID": "Prod-1",
+  "MPipes": [
+    {
+      "Name": "second",
+      "Description": "My second pipe",
+      "Connector": "Redis",
+      "Plugin": "plainPipe",
+      "ChannelIn": [
+        "first:34/topic/jalla",
+        "last:342/topic/fjosr"
+      ],
+      "ChannelOut": [
+        "bad:334/topic/mainjalla"
+      ]
+    },
+    {
+      "Name": "fasthird",
+      "Description": "This is the best!",
+      "Connector": "RedisX",
+      "Plugin": "plainPipeYouWish",
+      "ChannelIn": [
+        "first:34/topic/jallaiy",
+        "first:34/topic/jallaf",
+        "first:34/topic/jalla",
+        "last:342/topic/fjosr"
+      ],
+      "ChannelOut": [
+        "bad:334/topic/mainjalla",
+        "bad:34/topic/maidfnjalla"
+      ]
+    },
+    {
+      "Name": "first",
+      "Description": "My brand new piped",
+      "Connector": "Redis",
+      "Plugin": "plainPipe",
+      "ChannelIn": [
+        "first:34/topic/jalla",
+        "last:342/topic/fjosr"
+      ],
+      "ChannelOut": [
+        "bad:334/topic/mainjalla"
+      ]
+    }
+  ]
+}
