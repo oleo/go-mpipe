@@ -82,7 +82,7 @@ func Retrieve(pipename string) MPipe {
 	return structdata
 
 }
-func AvailablePipes()  {
+func AvailablePipes() []string {
 
 	c, err = redis.Dial("tcp",redis_store) 
 	if err != nil {
@@ -104,6 +104,6 @@ func AvailablePipes()  {
 //	fmt.Printf(" Read %s struct\n",structdata.Name)
 	return structdata
 	*/
-  //return keys
+  return keys
 }
 
